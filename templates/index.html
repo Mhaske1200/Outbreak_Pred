@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Based Disease Outbreak App</title>
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link href="./static/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <style>
+        .btn786{
+        position:relative;
+        left:110px;
+        top:-30px;
+        width: 48%;
+        margin-top: 50px;
+        background: #39b7dd;
+        text-align: center;
+        padding: 15px;
+        border-radius: 5px;
+        color: #fff;
+        cursor: pointer;
+        text-transform: uppercase;
+        position: center;}
+        .res{
+        color:#c5ecfd;
+        }
+    </style>
+</head>
+<body style="background-image:url('https://unitaid.org/assets/banner-malaria-unitaid-2019-800x420.jpg');  background-repeat: no-repeat;  background-attachment: fixed;
+  background-size: cover">
+    <div class="container pb-3" >
+        <div class="row">
+            <div class="col">
+                <form action='/predict' method="post">
+                    <h3 class="alert text-light text-center success-color bg-dark">Malaria Outbreak</h3>
+                    <div class="mb-3">
+                        <input name="city" id="city" class="form-control" placeholder="Select City"/>
+                    </div>
+                    <div class="d-flex justify-content-center align-items-center" id="weatherwidget">
+                </div>
+                     <div class="row center">
+
+                        <button type="submit" class="btn786" style="opacity: 0.8">Predict Outbreak</button>
+                    </div>
+                </form>
+                <div style="background-color:white;padding:5px;opacity: 0.7">
+                    <h2>PREDICTION</h2>
+                    <strong style="color:orange"><br class="res" style="color:white">{{pred}}<br></strong>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+      <script src="./static/js/main.js"></script>
+</body>
+</html>
